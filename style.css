@@ -1,0 +1,269 @@
+body {
+    background-color: #F2F3D0;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.titlething {
+    font-size: 26pt;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #A58840;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.buttonsthing {
+    font-size: 18pt;
+    font-weight: normal;
+    word-spacing: 5px;
+    color: dimgray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.imgrow {
+    display: flex;
+}
+
+.imgrowint {
+    padding: 5px;
+    display: inline-flex
+}
+
+#bannerimage {
+	width: 100%;
+	background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/677/302/small/abstract-technology-banner-background.jpg);
+	height: 405px;
+	background-color: blue;
+	background-position: center;
+
+}
+
+.right_bar {
+	display: inline-block;
+	width: 29.5%;
+    float: right;
+}
+
+.about {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 96px;
+}
+
+.about img {
+    max-height: 150px;
+    display: flex;
+    border-radius: 25px;
+}
+
+.about h3 {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: block;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.about p {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: block;
+    font-family: basic-sans, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.homelinks {
+    float: left;
+    display: block;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 320px;
+}
+
+.homelinks img {
+    max-width: 96px;
+    flex-basis: 40%;
+}
+
+.homelinkimg1 {
+    float: left;
+}
+
+.homelinkimg2 {
+    float: right;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.homelinkimg1:hover {
+    filter: invert(100);
+    -webkit-transition: filter 100ms linear;
+    -ms-transition: filter 100ms linear;
+    transition: filter 100ms linear;
+}
+
+.homelinkimg2:hover {
+    filter: invert(100);
+    -webkit-transition: filter 100ms linear;
+    -ms-transition: filter 100ms linear;
+    transition: filter 100ms linear;
+}
+
+.homelinktext1 {
+    float: right;
+    padding-left: 32px;
+    padding-top: 4px;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.homelinktext2 {
+    float: left;
+    padding-left: 0px;
+    padding-top: 4px;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.unconst {
+    text-align: center;
+}
+
+.unconst img {
+    width: 640px;
+}
+
+.game {
+    text-align: center;
+}
+
+.gifs {
+    position: fixed;
+    bottom: 15px;
+    text-align: center;
+}
+
+.dordgif {
+    max-height: 31px;
+}
+
+.forthebadge {
+    text-align: center;
+}
+
+.link1 {
+    text-align: center;
+}
+
+.link1 a {
+    color: #4C86CB;
+    font-family: basic-sans, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link1 a:hover {
+    color: #D270F1;
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
+
+.info {
+    font-family: basic-sans, sans-serif;
+    text-align: center;
+    margin: 0 240px 0 240px;
+}
+
+.info h2 {
+    font-size: 26px;
+}
+
+.info h3 {
+    font-size: 20px;
+}
+
+.info li {
+    text-align: left;
+    font-size: 20px;
+}
+
+.contacttitle {
+    text-align: center;
+    font-family: basic-sans, sans-serif;
+}
+
+.contacttitle h1 {
+    font-size: 48px;
+    display: inline;
+}
+
+.contacttitle h3 {
+    margin-top: 4px;
+}
+
+.contactlinks {
+    float: left;
+    display: block;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 420px;
+}
+
+.contactlinks img {
+    max-width: 96px;
+    flex-basis: 40%;
+}
+
+.contactlinkimg1 {
+    float: left;
+}
+
+.contactlinkimg2 {
+    float: right;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.contactlinkimg1:hover {
+    filter: invert(100);
+    -webkit-transition: filter 100ms linear;
+    -ms-transition: filter 100ms linear;
+    transition: filter 100ms linear;
+}
+
+.contactlinkimg2:hover {
+    filter: invert(100);
+    -webkit-transition: filter 100ms linear;
+    -ms-transition: filter 100ms linear;
+    transition: filter 100ms linear;
+}
+
+.contactlinktext1 {
+    float: right;
+    padding-left: 32px;
+    padding-top: 4px;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contactlinktext2 {
+    float: left;
+    padding-left: 0px;
+    padding-top: 4px;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+}

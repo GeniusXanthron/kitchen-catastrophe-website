@@ -1,0 +1,64 @@
+/* CSS for the fricking Navigation bar! */
+
+.main a {
+    background-color: darkgray;
+    float: left;
+    color: #231923;
+    display: inline;
+}
+
+/* .text {
+    text-align: center;
+    padding: 31px 14px;
+    font-size: 18px;
+    font-family: basic-sans, sans-serif;
+    font-weight: 700;
+    text-decoration-line: none;
+}
+
+.main a:hover {
+    color: #D09ADC;
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+} */
+
+.main img {
+    max-height: 69px;
+    padding: 20px 28px;
+}
+
+.main {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkgray;
+    border-radius: 25px;
+}
+
+.main li {
+    display: inline;
+}
+
+.main li a {
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.text {
+    font-family: basic-sans, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 26px;
+    padding: 42px 16px;
+}
+
+.text:hover {
+    color: #D270F1;
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
