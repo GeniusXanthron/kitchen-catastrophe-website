@@ -1,7 +1,7 @@
 /* CSS for the fricking Navigation bar! */
 
 .main a {
-    background-color: darkgray;
+    background-color: #BBAE80;
     float: left;
     color: #231923;
     display: inline;
@@ -30,11 +30,12 @@
 
 .main {
     list-style-type: none;
-    margin: 0;
+    margin: auto;
     padding: 0;
     overflow: hidden;
-    background-color: darkgray;
+    background-color: #BBAE80;
     border-radius: 25px;
+    max-width: 960px;
 }
 
 .main li {

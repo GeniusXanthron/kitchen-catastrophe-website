@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="https://use.typekit.net/phx0aia.css">
-    <title>Play!</title>
+    <title>Contact Us!</title>
     <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
 
@@ -22,16 +22,22 @@
     </div>
     <br>
     <div class="contacttitle">
-        <h1>Contact Me!</h1>
-        <h3>(Leave me a message or review below!)</h3>
+        <h1>Contact Us!</h1>
+        <h3>(Leave a message or review below!)</h3>
     </div>
-    <div class="contactlinks">
-        <div>
-            <a href="mailto:whatever@gmail.com"><img src="images/email.png" alt="email" class="contactlinkimg1"></a>
-            <div class="contactlinktext1">
-                <h3>Email</h3>
-            </div>
-        </div>
+    <div class="form">
+        <form>
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="type">Type:</label><br>
+            <input type="radio" id="suggest" name="type">
+            <label for="suggest">Suggestion</label><br>
+            <input type="radio" id="feedback" name="type">
+            <label for="feedback">Feedback</label><br><br>
+            <label for="cont">Content:</label><br>
+            <textarea id="cont" name="cont" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Submit!">
+        </form>
     </div>
 </body>
 </html>
