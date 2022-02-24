@@ -12,7 +12,7 @@ body {
     max-width: 1024px;
     min-height: 1024px;
     padding: 0;
-    border-radius: 8px;
+    border-radius: 16px;
     margin: auto;
     -webkit-box-shadow: 12px 29px 81px 0px rgba(187,174,128,1);
     -moz-box-shadow: 12px 29px 81px 0px rgba(187,174,128,1);
@@ -92,6 +92,67 @@ body {
     font-family: basic-sans, sans-serif;
     font-weight: normal;
     font-size: 16px;
+}
+
+.aboutgame {
+    float: left;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 128px;
+}
+
+.aboutgame img {
+    max-height: 150px;
+    display: flex;
+    border-radius: 25px;
+}
+
+.aboutgame h3 {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: block;
+    font-family: basic-sans, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.aboutgame p {
+    padding-left: 32px;
+    padding-right: 32px;
+    display: block;
+    font-family: basic-sans, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.abtgame1 {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.abtgame2 {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.abtgame3 {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.abtgame4 {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.abtgame5 {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.abtgame6 {
+    display: flex;
+    margin-bottom: 32px;
 }
 
 .homelinks {
