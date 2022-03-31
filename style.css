@@ -418,15 +418,14 @@ body {
 }
 
 .copyright {
-	vertical-align: bottom;
 	display: inline-flex;
 	margin: 64px 128px 32px 128px;
-	align-content: center;
 }
 
 .crlogos {
 	display: inline;
 	float: left;
+	margin-top: 20px;
 }
 
 .crlogos img {
