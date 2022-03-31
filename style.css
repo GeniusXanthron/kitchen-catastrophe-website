@@ -5,6 +5,7 @@ html {
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
+	font-family: basic-sans, sans-serif;
 }
 
 body {
@@ -414,4 +415,26 @@ body {
     transition: background-color 100ms linear;
     -webkit-transition: background-color 100ms linear;
     -ms-transition: background-color 100ms linear;
+}
+
+.copyright {
+	vertical-align: bottom;
+	display: inline-flex;
+	margin: 64px 128px 32px 128px;
+	align-content: center;
+}
+
+.crlogos {
+	display: inline;
+	float: left;
+}
+
+.crlogos img {
+	max-width: 32px;
+	height: auto;
+}
+
+.crtext {
+	font-weight: bold;
+	float: right;
 }
