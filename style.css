@@ -442,3 +442,8 @@ body {
 	text-decoration: none;
 	color: #D270F1;
 }
+
+.logintitle {
+	text-align: center;
+	font-size: 22px;
+}
