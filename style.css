@@ -436,6 +436,7 @@ body {
 .crtext {
 	font-weight: bold;
 	text-align: center;
+	font-size: 12px;
 }
 
 .crtext a {
