@@ -437,3 +437,8 @@ body {
 	font-weight: bold;
 	text-align: center;
 }
+
+.crtext a {
+	text-decoration: none;
+	color: #D270F1;
+}
