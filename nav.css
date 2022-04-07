@@ -63,3 +63,18 @@
     -ms-transition: color 100ms linear;
     transition: color 100ms linear;
 }
+
+.logintext {
+    font-family: basic-sans, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 26px;
+    padding: 42px 16px;
+}
+
+.logintext:hover {
+    color: #0DC72E;
+    -webkit-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
