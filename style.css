@@ -527,4 +527,8 @@ textarea:hover {
   text-align: center;
   font-size: 22px;
 }
+
+.invisible {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
