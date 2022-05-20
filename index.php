@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $con=mysqli_connect("localhost","root","");
     mysqli_select_db($con,"kcdb");
     if (!$con) {
@@ -38,7 +39,13 @@
     <div class="unconst">
         <img alt="Under construction" src="images/under_const.gif">
     </div>--->
-        <h1 style="text-align: center; font-family: basic-sans, sans-serif; font-weight: bolder; font-size: 48px; margin-bottom: 16px;">Hello, <?php if(isset($_SESSION['login'])){echo $_SESSION['username'];} else {echo "Guest";} ?>!</h1>
+        <h1 style="text-align: center; font-family: basic-sans, sans-serif; font-weight: bolder; font-size: 48px; margin-bottom: 16px;">Hello, <?php if(isset($_SESSION['login'])){echo $_SESSION['username']; echo '<a href="index.php?logout=true" style="font-size: 20px;">Logout</a>';} else {echo "Guest";} ?>!</h1>
+        <?php 
+            if (isset($_GET['logout'])) {
+                session_destroy();
+                echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
+            }
+        ?>
         <h1 style="text-align: center; font-family: basic-sans, sans-serif; font-weight: bolder; font-size: 48px; margin-bottom: 16px;">About the Team!</h1>
     <div class="about">
         <img src="images/char.png" alt="pfp">

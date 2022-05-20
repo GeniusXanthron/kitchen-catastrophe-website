@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $con=mysqli_connect("localhost","root","");
     mysqli_select_db($con,"kcdb");
     if (!$con) {
@@ -64,12 +65,13 @@
                         echo "<script type='text/javascript'>
                         alert ('LOGGED IN!!!!!')
                         </script>";
-                    } else {
-                        echo "<script type='text/javascript'>
-                        alert ('NOPE!!!!!')
-                        </script>";
+                        header("Location: index.php");
+                        die();
+                        return;
                     }
-                
+                    echo "<script type='text/javascript'>
+                    alert ('NOPE!!!!!')
+                    </script>";
                 }
             }
         ?>
