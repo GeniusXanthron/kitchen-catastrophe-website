@@ -51,8 +51,8 @@
         <img src="images/char.png" alt="pfp">
         <div class="about-text">
         <h3>About the Creator! :D</h3>
-            <p>She's Joan You, creator of Kitchen Catastrohphe!<br>
-(not actual photo)</p>
+            <p>She's Joan You, creator of Kitchen Catastrophe!<br>
+        (not actual photo)</p>
         <h3>Other members of the Team</h3>
         <p style="font-size: 24px;">Aman Darwisy <sm style="font-size: 12px;">(web developer)</sm></p>
         <p style="font-size: 24px;">Iman Nasuha</p>
