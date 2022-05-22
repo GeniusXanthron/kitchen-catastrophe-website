@@ -25,7 +25,7 @@
 
 		<script>
 				$(function(){
-					$("#nav-placeholder").load("nav.html");
+					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
     </div>    
@@ -43,7 +43,7 @@
             <label for="username">Username</label><br>
             <input type="text" id="username" name="username"><br><br>
             <label for="password">Password</label><br>
-            <input type="text" id="password" name="password"><br><br>
+            <input type="password" id="password" name="password"><br><br>
             <input type="submit" value="Register" name="Register">
         </form>
         <p class="register-successful invisible">Register successful!</p>
@@ -54,25 +54,25 @@
                 $username=$_POST["username"];
                 $password=$_POST["password"];
                 $conflict="select * from logins where username='$username'";
-                $conflict_run=mysqli_query($con, $conflict);
-                if (mysqli_num_rows($conflict_run) === 1) {
-                    $row = mysqli_fetch_assoc($conflict_run);
-                    if ($row['username'] === $username) {
-                        echo "<script type='text/javascript'>
-                        alert ('NO!!!')
-                        </script>";
-                        return;
-                    }
+                // $conflict_run=mysqli_query($con, $conflict);
+                // if (mysqli_num_rows($conflict_run) === 1) {
+                //     $row = mysqli_fetch_assoc($conflict_run);
+                //     if ($row['username'] === $username) {
+                //         echo "<script type='text/javascript'>
+                //         alert ('NO!!!')
+                //         </script>";
+                //         return;
+                //     }
                     $query="insert into logins values ('','$username','$password')";
-                            $query_run=mysqli_query($con, $query);
-                            if($query_run)
-                            {
-                                echo "<script type='text/javascript'>
-                                alert ('SUCCESS!!!!!')
-                                </script>";
-                            }
+                        $query_run=mysqli_query($con, $query);
+                        if($query_run)
+                        {
+                             echo "<script type='text/javascript'>
+                            alert ('SUCCESS!!!!!')
+                            </script>";
+                         }
                 }
-            }
+            // }
         ?>
 	</div>
 	<div class="copyright">

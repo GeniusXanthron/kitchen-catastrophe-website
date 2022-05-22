@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    $con=mysqli_connect("localhost","root","");
+    mysqli_select_db($con,"kcdb");
+    if (!$con) {
+        echo "Something's wrong, I can feel it";
+    }
+    if (!isset($_SESSION['login'])){
+        echo '<script type="text/JavaScript"> window.location.replace("logindb.php"); </script>';
+    }
+?>
 <!doctype html>
 <html>
 <head>
