@@ -57,11 +57,15 @@
 
                 $query="select * from logins where username='$username' and password='$password'";
                 $query_run = mysqli_query($con, $query);
+                $logininfo = mysqli_fetch_array(($query_run)) {
+                    $admin = $logininfo['admin'];
+                }
                 if (mysqli_num_rows($query_run) === 1) {
                     $row = mysqli_fetch_assoc($query_run);
                     if ($row['username'] === $username && $row['password'] === $password) {
                         $_SESSION['login']=1;
                         $_SESSION['username']=$username;
+                        $_SESSION['admin']=$admin;
                         echo "<script type='text/javascript'>
                         alert ('LOGGED IN!!!!!')
                         </script>";
