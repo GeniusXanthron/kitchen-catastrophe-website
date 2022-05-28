@@ -1,9 +1,12 @@
 <?php
     session_start();
-    $con=mysqli_connect("localhost","root","");
+    $con=mysqli_connect("127.0.0.1","root","");
     mysqli_select_db($con,"kcdb");
     if (!$con) {
         echo "Something's wrong, I can feel it";
+    }
+    if (isset($_SESSION['login'])){
+        echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
     }
 ?>
 <html lang="en">
@@ -31,7 +34,7 @@
 					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
-    </div>    
+    </div>
 
     <!---<br>
 
@@ -57,18 +60,14 @@
 
                 $query="select * from logins where username='$username' and password='$password'";
                 $query_run = mysqli_query($con, $query);
-                $logininfo = mysqli_fetch_array(($query_run)) {
-                    $admin = $logininfo['admin'];
-                }
                 if (mysqli_num_rows($query_run) === 1) {
                     $row = mysqli_fetch_assoc($query_run);
+                    $admin = $row['admin'];
                     if ($row['username'] === $username && $row['password'] === $password) {
                         $_SESSION['login']=1;
                         $_SESSION['username']=$username;
                         $_SESSION['admin']=$admin;
-                        echo "<script type='text/javascript'>
-                        alert ('LOGGED IN!!!!!')
-                        </script>";
+                        echo "<script> window.location.replace('index.php'); </script>";
                         header("Location: index.php");
                         die();
                         return;
@@ -88,7 +87,7 @@
 			<img src="https://mirrors.creativecommons.org/presskit/icons/sa.xlarge.png" alt="">
 		</div> --->
 	</div>
-    </body> 
+    </body>
     <footer>
 
     </footer>

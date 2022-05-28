@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $con=mysqli_connect("localhost","root","");
+    $con=mysqli_connect("127.0.0.1","root","");
     mysqli_select_db($con,"kcdb");
     if (!$con) {
         echo "Something's wrong, I can feel it";
@@ -23,18 +23,18 @@
 <body>
     <br>
     <div class="bar">
-        <div id="nav-placeholder">        
+        <div id="nav-placeholder">
 		</div>
 		<script>
 				$(function(){
-					$("#nav-placeholder").load("nav.html");
+					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
     </div>
     <br>
     <div class="game">
         <iframe src="https://scratch.mit.edu/projects/633427430/embed" allowtransparency="true" width="768" height="640" frameborder="0" scrolling="no" allowfullscreen></iframe>
-    </div>  
+    </div>
     <br>
     <div>
         <div class="link1">

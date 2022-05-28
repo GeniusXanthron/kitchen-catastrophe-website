@@ -1,6 +1,9 @@
 <?php
-    $con=mysqli_connect("localhost","root","");
+    $con=mysqli_connect("127.0.0.1","root","");
     mysqli_select_db($con,"kcdb");
+    if (isset($_SESSION['login'])){
+        echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
+    }
 ?>
 <html lang="en">
     <head>
@@ -28,7 +31,7 @@
 					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
-    </div>    
+    </div>
 
     <!---<br>
 
@@ -53,7 +56,7 @@
             {
                 $username=$_POST["username"];
                 $password=$_POST["password"];
-                $conflict="select * from logins where username='$username'";
+                // $conflict="select * from logins where username='$username'";
                 // $conflict_run=mysqli_query($con, $conflict);
                 // if (mysqli_num_rows($conflict_run) === 1) {
                 //     $row = mysqli_fetch_assoc($conflict_run);
@@ -63,16 +66,15 @@
                 //         </script>";
                 //         return;
                 //     }
-                    $query="insert into logins values ('','$username','$password')";
-                        $query_run=mysqli_query($con, $query);
-                        if($query_run)
-                        {
-                             echo "<script type='text/javascript'>
-                            alert ('SUCCESS!!!!!')
-                            </script>";
-                         }
+                $query="insert into logins values ('$username','$password','0')";
+                $query_run=mysqli_query($con, $query);
+                if($query_run)
+                {
+                    echo "<script type='text/javascript'>
+                    alert ('SUCCESS!!!!!')
+                    </script>";
                 }
-            // }
+            }
         ?>
 	</div>
 	<div class="copyright">
@@ -83,7 +85,7 @@
 			<img src="https://mirrors.creativecommons.org/presskit/icons/sa.xlarge.png" alt="">
 		</div> --->
 	</div>
-    </body> 
+    </body>
     <footer>
 
     </footer>
