@@ -67,6 +67,33 @@ mysqli_select_db($con,"kcdb");
             -webkit-transition: background-color 100ms linear;
             -ms-transition: background-color 100ms linear;
         }
+        
+        .file-input::-webkit-file-upload-button {
+            visibility: hidden;
+            display: none;
+        }
+        .file-input::before {
+            content: 'Select image';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #aba695;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+            margin-right: 15px;
+        }
+        .file-input:hover::before {
+            border-color: #c29bb3;
+        }
+        .file-input:active::before {
+            background: #f0d5e6;
+        }
     </style>
 </head>
 <body>
@@ -99,7 +126,7 @@ mysqli_select_db($con,"kcdb");
             $image=$data['Image'];
         ?>
 
-    <form method="POST" action="edit.php?id=<?php echo $id; ?>">
+    <form method="POST" action="edit.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
         <label for="name">Name:</label><br>
         <input type="text" name="name" value="<?php echo $name;?>"></input><br><br>
 
@@ -113,27 +140,53 @@ mysqli_select_db($con,"kcdb");
         <input type="text" name="phone" maxlength="12" value="<?php echo $phone;?>"></input><br><br>
         
         <label for="image">Image link:</label><br>
-        <input type="text" name="image" value="<?php echo $image;?>"></input><br><br>
+        <input type="file" name="Upload" id="fileToUpload" class="file-input"></input><br><br>
 
         <input type="button" value="Back" onClick="location.href='about-us-admin.php'"></input>
         <input type="submit" value="Update!" name="edit"></input>
 
         <?php
             if(isset($_POST['edit'])){
-                $name=$_POST['name'];
-                $age=$_POST['age'];
-                $email=$_POST['email'];
-                $phone=$_POST['phone'];
-                $image=$_POST['image'];
-                $query2="UPDATE info SET Name='$name', Age='$age', Email='$email', Phonenumber='$phone', Image='$image' WHERE ID=$id";
+                $target_dir = "uploads/";
+                $target_file = $target_dir . basename($_FILES["Upload"]["name"]);
+                $uploadOk = 1;
+                $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+                  $check = getimagesize($_FILES["Upload"]["tmp_name"]);
+                  if($check !== false) {
+                    $uploadOk = 1;
+                  } else {
+                    echo "File is not an image.";
+                    $uploadOk = 0;
+                  }
+                
+                // Allow certain file formats
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                && $imageFileType != "gif" ) {
+                  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                  $uploadOk = 0;
+                }
 
-                if(mysqli_query($con,$query2)){
-                    echo "<script type=text/javascript>alert ('Updated!')</script>";
-                    echo "<script type='text/JavaScript'> window.location.replace('about-us-admin.php'); </script>";
+                if ($uploadOk == 0) {
+                  echo "Sorry, your file was not uploaded.";
+                } else {
+                    if (move_uploaded_file($_FILES["Upload"]["tmp_name"], $target_file)) {
+                        $name=$_POST["name"];
+                        $age=$_POST["age"];
+                        $email=$_POST["email"];
+                        $phone=$_POST["phone"];
+                        
+                        $query2="UPDATE info SET Name='$name', Age='$age', Email='$email', Phonenumber='$phone', Image='$target_file' WHERE ID=$id";
+                        
+                        if(mysqli_query($con,$query2)){
+                            echo "<script type=text/javascript>alert ('Updated!')</script>";
+                            echo "<script type='text/JavaScript'> window.location.replace('about-us-admin.php'); </script>";
+                        }
+                        else{
+                            echo "<script type=text/javascript>alert ('Whoops something went wrong')</script>";
+                        }
+                    }
                 }
-                else{
-                    echo "<script type=text/javascript>alert ('Whoops something went wrong')</script>";
-                }
+                
             }
         ?>
     </form>
