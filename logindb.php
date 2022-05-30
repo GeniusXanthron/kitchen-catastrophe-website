@@ -5,9 +5,6 @@
     if (!$con) {
         echo "Something's wrong, I can feel it";
     }
-    if (isset($_SESSION['login'])){
-        echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
-    }
 ?>
 <html lang="en">
     <head>
@@ -34,7 +31,7 @@
 					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
-    </div>
+    </div>    
 
     <!---<br>
 
@@ -58,16 +55,19 @@
                 $username=$_POST["username"];
                 $password=$_POST["password"];
 
-                $query="select * from logins where username='$username' and password='$password'";
+                $query="select * from logins where username='$username' && password='$password'";
                 $query_run = mysqli_query($con, $query);
+                
                 if (mysqli_num_rows($query_run) === 1) {
                     $row = mysqli_fetch_assoc($query_run);
-                    $admin = $row['admin'];
+                    $admin=$row['admin'];
                     if ($row['username'] === $username && $row['password'] === $password) {
                         $_SESSION['login']=1;
                         $_SESSION['username']=$username;
                         $_SESSION['admin']=$admin;
-                        echo "<script> window.location.replace('index.php'); </script>";
+                        echo "<script type='text/javascript'>
+                        alert ('LOGGED IN!!!!!')
+                        </script>";
                         header("Location: index.php");
                         die();
                         return;
@@ -87,7 +87,7 @@
 			<img src="https://mirrors.creativecommons.org/presskit/icons/sa.xlarge.png" alt="">
 		</div> --->
 	</div>
-    </body>
+    </body> 
     <footer>
 
     </footer>

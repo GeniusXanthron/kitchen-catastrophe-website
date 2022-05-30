@@ -1,9 +1,6 @@
 <?php
     $con=mysqli_connect("127.0.0.1","root","");
     mysqli_select_db($con,"kcdb");
-    if (isset($_SESSION['login'])){
-        echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
-    }
 ?>
 <html lang="en">
     <head>
@@ -31,7 +28,7 @@
 					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
-    </div>
+    </div>    
 
     <!---<br>
 
@@ -64,17 +61,18 @@
                 //         echo "<script type='text/javascript'>
                 //         alert ('NO!!!')
                 //         </script>";
-                //         return;
+                //         returdn;
                 //     }
-                $query="insert into logins values ('$username','$password','0')";
-                $query_run=mysqli_query($con, $query);
-                if($query_run)
-                {
-                    echo "<script type='text/javascript'>
-                    alert ('SUCCESS!!!!!')
-                    </script>";
+                    $query="insert into logins values ('$username','$password','0')";
+                        $query_run=mysqli_query($con, $query);
+                        if($query_run)
+                        {
+                            echo "<script type='text/javascript'>
+                            alert ('SUCCESS!!!!!')
+                            </script>";
+                        }
                 }
-            }
+            // }
         ?>
 	</div>
 	<div class="copyright">
@@ -85,7 +83,7 @@
 			<img src="https://mirrors.creativecommons.org/presskit/icons/sa.xlarge.png" alt="">
 		</div> --->
 	</div>
-    </body>
+    </body> 
     <footer>
 
     </footer>

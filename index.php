@@ -32,7 +32,7 @@
 					$("#nav-placeholder").load("nav.php");
 				});
 		</script>
-    </div>
+    </div>    
 
     <!---<br>
 
@@ -40,7 +40,7 @@
         <img alt="Under construction" src="images/under_const.gif">
     </div>--->
         <h1 style="text-align: center; font-family: basic-sans, sans-serif; font-weight: bolder; font-size: 48px; margin-bottom: 16px;">Hello, <?php if(isset($_SESSION['login'])){echo $_SESSION['username']; echo '<a href="index.php?logout=true" style="font-size: 20px;">Logout</a>';} else {echo "Guest";} ?>!</h1>
-        <?php
+        <?php 
             if (isset($_GET['logout'])) {
                 session_destroy();
                 echo '<script type="text/JavaScript"> window.location.replace("index.php"); </script>';
@@ -128,7 +128,7 @@
 			The source code can be found <a href="https://github.com/GeniusXanthron/kitchen-catastrophe-website">here</a>.</p>
 		</div>
 	</div>
-    </body>
+    </body> 
     <footer>
 
     </footer>
