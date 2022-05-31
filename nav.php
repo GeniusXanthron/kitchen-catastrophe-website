@@ -14,7 +14,6 @@
   <li><a href="play.php" class="text">Play</a></li>
   <li><a href="contact.html" class="text">Contact</a></li>
   <!---<li><a href="feedback.html" class="text">Feedback</a></li>--->
-  <li><?php if(isset($_SESSION['admin'])){echo '<a href="about-us-admin.php" class="text">Admin</a>';}?></li>
-  <li><?php if(isset($_SESSION['admin'])){echo '<a href="insert.php" class="text">Insert</a>';}?></li>
+  <li><?php if(isset($_SESSION['login']) and $_SESSION['admin']==true){echo '<a href="about-us-admin.php" class="text">Admin</a>';}?></li>
   <li><?php if(isset($_SESSION['login'])){echo '<a class="logintext">'.$_SESSION['username'].'</a>';} else {echo '<a href="logindb.php" class="logintext">Login</a>';} ?></li>
 </ul>

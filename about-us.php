@@ -90,7 +90,7 @@ mysqli_select_db($con,"kcdb");
     </div><br><br>
     <?php
     }
-    if($_SESSION['admin']==true){
+    if(isset($_SESSION['admin']) && $_SESSION['admin']==true){
         echo "<button onClick='location.href=\"about-us-admin.php\"'></button>";
     }
     ?>

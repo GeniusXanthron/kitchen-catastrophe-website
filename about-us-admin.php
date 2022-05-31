@@ -257,6 +257,7 @@ mysqli_select_db($con,"kcdb");
                 $query2="DELETE FROM info WHERE ID='$deleteid'";
                 mysqli_query($con,$query2);
             }
+            echo '<script type="text/JavaScript"> window.location.replace("about-us-admin.php"); </script>';
         }
         ?>
         

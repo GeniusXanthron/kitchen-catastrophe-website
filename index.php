@@ -103,7 +103,7 @@
     <br><br><br><br>
     <div class="homelinks">
         <div>
-            <a href="play.html"><img src="images/controller.png" alt="game" class="homelinkimg1"></a>
+            <a href="play.php"><img src="images/controller.png" alt="game" class="homelinkimg1"></a>
             <div class="homelinktext1">
                 <h3>Play the Game!</h3>
             </div>
